@@ -1,14 +1,7 @@
-
 pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                echo 'Getting Java code from GitHub'
-            }
-        }
 
         stage('Compile') {
             steps {
@@ -25,11 +18,11 @@ pipeline {
 
     post {
         success {
-            echo 'Java Program Executed Successfully!'
+            echo 'Java program executed successfully!'
         }
 
         failure {
-            echo 'Build Failed!'
+            echo 'Java program failed!'
         }
     }
 }
